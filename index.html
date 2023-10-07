@@ -1,14 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBER SECURITY HUB</title>
   <style>
-    h1 {
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       text-align: center;
+    }
+
+    header {
+      background-color: #333;
+      padding: 10px 0;
+    }
+
+    h1 {
+      margin: 0;
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      background-color: #444;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    nav a:hover {
+      border-bottom: 2px solid #fff;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    .books-list, .tools-list {
+      text-align: left;
+      max-width: 600px;
+      margin: auto;
     }
   </style>
 </head>
+<body>
+  <header>
+    <h1>CYBER SECURITY HUB</h1>
+  </header>
 
-<body bgcolor=black>
-  <h1 >CYBER SECURİTY BOOKS</h1>
-  <a href="https://ferhatsara.github.io/bug-bounty-books/bug-bounty-bootcamp.html">Bug Bounty Bootcamp The Guide to Finding and Reporting Web Vulnerabilities by Vickie Li</a>
-  <a href="https://ferhatsara.github.io/bug-bounty-books/linuxbasicsforhackers.html">linux basics for hackers</a>
+  <nav>
+    <a href="#books">Books</a>
+    <a href="#tools">Tools</a>
+    <!-- Ek menü öğeleri buraya eklenebilir -->
+  </nav>
+
+  <section id="books">
+    <h2>Books</h2>
+    <div class="books-list">
+      <a href="https://ferhatsara.github.io/bug-bounty-books/bug-bounty-bootcamp.html">Bug Bounty Bootcamp: The Guide to Finding and Reporting Web Vulnerabilities by Vickie Li</a>
+      <a href="https://ferhatsara.github.io/bug-bounty-books/linuxbasicsforhackers.html">Linux Basics for Hackers</a>
+      <!-- Ek kitaplar buraya eklenebilir -->
+    </div>
+  </section>
+
+  <section id="tools">
+    <h2>Tools</h2>
+    <div class="tools-list">
+      <a href="#">Tool 1</a>
+      <a href="#">Tool 2</a>
+      <!-- Ek araçlar buraya eklenebilir -->
+    </div>
+  </section>
 </body>
-
+</html>
