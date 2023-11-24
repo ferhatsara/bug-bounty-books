@@ -59,24 +59,23 @@
 
     <script>
         function escapeHtml(input) {
-            return input.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g,'%22').replace(/'/g,'%27').replace(/javascript/gi,''),replace(/alert/gi,''),replace(/prompt/gi,'');
-            
+            return input.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '%22').replace(/'/g, '%27').replace(/javascript/gi, '').replace(/alert/gi, '').replace(/prompt/gi, '');
         }
 
         function parsePacket() {
             var rawData = document.getElementById('packetData').value.trim();
             var separator = document.getElementById('separator').value;
             var escapedData = escapeHtml(rawData);
-            var escapedDataSeperator=escapeHtml(separator);
+            var escapedDataSeparator = escapeHtml(separator);
             var dataList;
 
-            if (escapedDataSeperator === 'space') {
+            if (escapedDataSeparator === 'space') {
                 dataList = escapedData.split(' ');
-            } else if (escapedDataSeperator === 'comma') {
+            } else if (escapedDataSeparator === 'comma') {
                 dataList = escapedData.split(',');
-            } else if (escapedDataSeperator === 'semicolon') {
+            } else if (escapedDataSeparator === 'semicolon') {
                 dataList = escapedData.split(';');
-            } else if (escapedDataSeperator === 'colon') {
+            } else if (escapedDataSeparator === 'colon') {
                 dataList = escapedData.split(':');
             }
 
