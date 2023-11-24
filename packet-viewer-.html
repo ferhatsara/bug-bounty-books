@@ -59,7 +59,7 @@
 
     <script>
         function escapeHtml(input) {
-            return input.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '%22').replace(/'/g, '%27').replace(/javascript/gi, '').replace(/alert/gi, '').replace(/prompt/gi, '');
+            return input.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '').replace(/'/g, '').replace(/javascript/gi, '').replace(/alert/gi, '').replace(/prompt/gi, '');
         }
 
         function parsePacket() {
