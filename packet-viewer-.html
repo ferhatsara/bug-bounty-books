@@ -5,7 +5,7 @@
         body {
             font-family: 'Courier New', Courier, monospace;
             background-color: #000;
-            color: #00ff00; /* Yeşil renk */
+            color: #00ff00; /* Green color */
             margin: 0;
             padding: 0;
         }
@@ -21,14 +21,14 @@
             height: 100px;
             margin-bottom: 10px;
             background-color: #111;
-            color: #00ff00; /* Yeşil renk */
-            border: 1px solid #00ff00; /* Yeşil renk */
+            color: #00ff00; /* Green color */
+            border: 1px solid #00ff00; /* Green color */
         }
 
         button {
             padding: 10px;
             cursor: pointer;
-            background-color: #00ff00; /* Yeşil renk */
+            background-color: #00ff00; /* Green color */
             color: #000;
             border: none;
         }
@@ -46,19 +46,39 @@
 <body>
     <div class="container">
         <textarea id="packetData" placeholder="Packet Raw Data"></textarea>
+        <label for="separator">Choose a Separator:</label>
+        <select id="separator">
+            <option value="space">Space</option>
+            <option value="comma">,</option>
+            <option value="semicolon">;</option>
+            <option value="colon">:</option>
+        </select>
         <button onclick="parsePacket()">Parse Packet</button>
         <div id="result"></div>
     </div>
 
     <script>
         function escapeHtml(input) {
-            return input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            return input.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g,'%22').replace(/'/g,'%27').replace(/javascript/gi,''),replace(/alert/gi,''),replace(/prompt/gi,'');
+            
         }
 
         function parsePacket() {
             var rawData = document.getElementById('packetData').value.trim();
+            var separator = document.getElementById('separator').value;
             var escapedData = escapeHtml(rawData);
-            var dataList = escapedData.split(' ');
+            var escapedDataSeperator=escapeHtml(separator);
+            var dataList;
+
+            if (escapedDataSeperator === 'space') {
+                dataList = escapedData.split(' ');
+            } else if (escapedDataSeperator === 'comma') {
+                dataList = escapedData.split(',');
+            } else if (escapedDataSeperator === 'semicolon') {
+                dataList = escapedData.split(';');
+            } else if (escapedDataSeperator === 'colon') {
+                dataList = escapedData.split(':');
+            }
 
             var resultDiv = document.getElementById('result');
             resultDiv.innerHTML = '';
